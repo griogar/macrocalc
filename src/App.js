@@ -10,7 +10,7 @@ const Results = (props) => {
   let carbCals = (goalCals - (props.weight * 4)) * 0.5
   let fatCals = (goalCals - (props.weight * 4)) * 0.5
 
-  if(props.goal === 1.2) {
+  if (props.goal === 1.2) {
     carbCals = (goalCals - (props.weight * 4)) * 0.7
     fatCals = (goalCals - (props.weight * 4)) * 0.3
   }
@@ -21,7 +21,8 @@ const Results = (props) => {
   console.log(parseFloat(fatCals))
   return (
     <>
-      <Table>
+    <h2>Results:</h2>
+      <Table size="sm">
         <thead>
           <tr>
             <th>Today's Calories</th>
@@ -40,7 +41,7 @@ const Results = (props) => {
         </tbody>
       </Table>
       <hr />
-      <Table>
+      <Table size="sm">
         <thead>
           <tr>
             <th>Macro Split</th>
@@ -117,10 +118,10 @@ const App = () => {
 
   return (
     <>
-      <Container className="p-3">
-        <h1 className="header">Macro Calculator</h1>
+      <h1 className="header">Macro Calculator</h1>
+      <Container>
         <Form>
-          <Form.Row>
+          <Form.Row className="justify-content-md-center">
             <Col md={6}>
               <Form.Row>
                 <Col md={6}>
@@ -195,15 +196,20 @@ const App = () => {
                   </Form.Group>
                 </Col>
               </Form.Row>
-              <Form.Row>
+              <Form.Row className="justify-content-md-center">
                 <Col md={12}>
                   <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
                 </Col>
               </Form.Row>
             </Col>
-            <Col md={1}></Col>
-            <Col md={5}>
-              <h2>Results:</h2>
+          </Form.Row>
+          <Form.Row className="justify-content-md-center">
+            <Col md="6">
+              <hr/>
+            </Col>
+          </Form.Row>
+          <Form.Row className="justify-content-md-center">
+            <Col md={6}>
               {formResult}
             </Col>
           </Form.Row>
