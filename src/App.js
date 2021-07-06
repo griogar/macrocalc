@@ -1,80 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Form, Table } from 'react-bootstrap';
-
+import { Button, Col, Container, Form } from 'react-bootstrap';
+import { Results } from './Components/Results';
 import './App.css';
-
-const Results = (props) => {
-  console.log(props)
-  const tdee = props.bmr * parseFloat(props.multiplier);
-  const goalCals = (tdee * props.goal);
-  let carbCals = (goalCals - (props.weight * 4)) * 0.5
-  let fatCals = (goalCals - (props.weight * 4)) * 0.5
-
-  if (props.goal === 1.2) {
-    carbCals = (goalCals - (props.weight * 4)) * 0.7
-    fatCals = (goalCals - (props.weight * 4)) * 0.3
-  }
-
-  console.log(goalCals)
-  console.log(props.weight * 4)
-  console.log(parseFloat(carbCals))
-  console.log(parseFloat(fatCals))
-  return (
-    <>
-    <h2>Results:</h2>
-      <Table size="sm">
-        <thead>
-          <tr>
-            <th>Today's Calories</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Minimum Calories (BMR)</td>
-            <td>{Math.round(props.bmr)}</td>
-          </tr>
-          <tr>
-            <td>Total Daily Expenditure (TDEE)</td>
-            <td>{Math.round(goalCals)}</td>
-          </tr>
-        </tbody>
-      </Table>
-      <hr />
-      <Table size="sm">
-        <thead>
-          <tr>
-            <th>Macro Split</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Macro</td>
-            <td>Grams</td>
-            <td>Calories</td>
-          </tr>
-          <tr>
-            <td>Protein</td>
-            <td>{props.weight}</td>
-            <td>{props.weight * 4}</td>
-          </tr>
-          <tr>
-            <td>Carbohydrate</td>
-            <td>{Math.round(carbCals / 4)}</td>
-            <td>{Math.round(carbCals)}</td>
-          </tr>
-          <tr>
-            <td>Fat</td>
-            <td>{Math.round(fatCals / 9)}</td>
-            <td>{Math.round(fatCals)}</td>
-          </tr>
-        </tbody>
-      </Table>
-    </>
-  )
-}
 
 const App = () => {
   const [results, setresults] = useState({
@@ -190,7 +117,7 @@ const App = () => {
                     <Form.Label>Body Composition Goal:</Form.Label>
                     <Form.Control as="select" id="goal" defaultValue="" onChange={handleInput}>
                       <option value="1">Maintain</option>
-                      <option value="0.75">Fat Loss</option>
+                      <option value="0.8">Fat Loss</option>
                       <option value="1.2">Muscle Gain</option>
                     </Form.Control>
                   </Form.Group>
