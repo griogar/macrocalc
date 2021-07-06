@@ -118,7 +118,7 @@ const App = () => {
                     <Form.Control as="select" id="goal" defaultValue="" onChange={handleInput}>
                       <option value="1">Maintain</option>
                       <option value="0.8">Fat Loss</option>
-                      <option value="1.2">Muscle Gain</option>
+                      <option value="1.1">Muscle Gain</option>
                     </Form.Control>
                   </Form.Group>
                 </Col>
