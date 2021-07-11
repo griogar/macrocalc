@@ -94,7 +94,7 @@ const App = () => {
                 <Col md={6}>
                   <Form.Group>
                     <Form.Label>Enter your weight (in lbs):</Form.Label>
-                    <Form.Control placeholder="Weight" id="weight" as="input" type="number" inputmode="decimal" onChange={handleInput} />
+                    <Form.Control placeholder="Weight" id="weight" as="input" type="number" inputMode="decimal" onChange={handleInput} />
                   </Form.Group>
                 </Col>
               </Form.Row>
