@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Form } from 'react-bootstrap';
+import { Button, InputGroup, Col, Container, Form} from 'react-bootstrap';
 import { Results } from './Components/Results';
 import './App.css';
 
@@ -48,6 +48,19 @@ const App = () => {
       <h1 className="header">Macro Calculator</h1>
       <Container>
         <Form>
+          <Form.Row className="justify-content-md-center">
+            <Col md="6">
+              <Form.Row>
+                <Col md="12">
+                    <Form.Label style={{padding: "25px"}}>Measurement Units:</Form.Label>
+                  <InputGroup>
+                    <InputGroup.Radio id="imperial" label="Imperial" inline style={{padding: "25px"}} />
+                    <InputGroup.Radio as="radio" id="metric" label="Metric" inline />
+                  </InputGroup>
+                </Col>
+              </Form.Row>
+            </Col>
+          </Form.Row>
           <Form.Row className="justify-content-md-center">
             <Col md={6}>
               <Form.Row>

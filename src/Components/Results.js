@@ -51,8 +51,8 @@ export const Results = (props) => {
                     </tr>
                     <tr>
                         <td>Protein</td>
-                        <td>{props.weight}</td>
-                        <td>{props.weight * 4}</td>
+                        <td>{Math.round(props.weight)}</td>
+                        <td>{Math.round(props.weight) * 4}</td>
                     </tr>
                     <tr>
                         <td>Carbohydrate</td>
