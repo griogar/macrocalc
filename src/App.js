@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 
 import FacebookLogin from 'react-facebook-login';
 import { Calculator } from './Components/Calculator';
-import { Card, Image } from 'react-bootstrap';
 import './App.css'
 
 const App = () => {
   const [login, setLogin] = useState(false);
-  const [data, setData] = useState({});
-  const [picture, setPicture] = useState('');
+  //const [data, setData] = useState({});
+  // const [picture, setPicture] = useState('');
 
   const responseFacebook = (response) => {
-    setData(response);
-    setPicture(response.picture.data.url);
+    //setData(response);
+    //setPicture(response.picture.data.url);
 
     if (response.accessToken) {
       setLogin(true);
